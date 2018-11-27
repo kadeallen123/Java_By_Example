@@ -7,6 +7,7 @@
 package java_by_example;
 
 import java.util.*;
+import java.io.IOException;
 
 public class Main {
     
@@ -18,21 +19,35 @@ public class Main {
     static boolean mainLoop = true;
     public static String endStatement;
     
-    public final static void clearConsole() {
-        try {
-            final String os = System.getProperty("os.name");
-
-            if (os.contains("Windows")) {
-                Runtime.getRuntime().exec("cls");
-            } else {
-                Runtime.getRuntime().exec("clear");
+    public static void clearConsole() throws IOException, InterruptedException {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+    }
+    public static void simpleAsker() throws IOException {
+        System.out.println("\nThis is Simple Programs.\n"
+                    + "\t'a' to view the 'Hello World' Program\n"
+                    + "\t'b' to view the 'Two Integer Comparison' Program\n"
+                    + "\t'c' to view the 'Three Integer Comparison' Program\n"
+                    + "\t'd' to view the 'Even or Odd' Program\n"
+                    + "\t'e' to view the 'Positive or Negative' Program\n"
+                    + "\t'f' to view the 'Leap Year' Program");
+            program = input.next();
+            switch (program) {
+                case "back":
+                    categoryAsker();
+                    break;
+                case "a":
+                    Simple.helloWorld();
+                    break;
             }
-        } catch (final Exception e) {
-            //  Handle any exceptions.
-        }
+//            if ("back".equals(program)) {
+//                categoryAsker();
+//            }
+//            if ("a".equals(program)) {
+//                Simple.helloWorld();
+//            }
     }
     
-    public static void asker(){
+    public static void categoryAsker() throws IOException{
         System.out.println("Enter the correpsonding number/letter to view the corresponding category/program\n"
                 + "Enter 'back' at any time to go back to the previous selection,\n"
                 + "Enter 'exit' at any time to exit the program.\n"
@@ -45,25 +60,15 @@ public class Main {
                 + "\t'7' to view Linked Lists.");
         mode = input.nextByte();
         if (mode == 1) {
-            System.out.println("\nThis is Simple Programs.\n"
-                    + "\t'a' to view the 'Hello World' Program\n"
-                    + "\t'b' to view the 'Two Integer Comparison' Program\n"
-                    + "\t'c' to view the 'Three Integer Comparison' Program\n"
-                    + "\t'd' to view the 'Even or Odd' Program\n"
-                    + "\t'e' to view the 'Positive or Negative' Program\n"
-                    + "\t'f' to view the 'Leap Year' Program");
-            program = input.next();
-            if ("a".equals(program)) {
-                Simple.helloWorld();
-            }
+            simpleAsker();
         }
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
        // Welcome statement
-        System.out.println("Welcome to Java By Examples\nPress 'Enter' to continue");
+        System.out.println("Welcome to Java By Examples\nPress 'Enter' to continue.");
         input.nextLine();
-        asker();
+        categoryAsker();
     }
     
 }
