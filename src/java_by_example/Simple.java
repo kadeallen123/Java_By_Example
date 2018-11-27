@@ -15,11 +15,11 @@ public class Simple {
         Main.cls();
         System.out.println("Hello World Program!\n"
                 + "\nOutput:\n"
-                + "Hello World!\n"
+                + "Hello World!\n\n"
                 + "Code for program:\n"
                 + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                 + "~ public static void main(String[] args) {\n"
-                + "~~~~ System.out.println(\"Hello World!\")\n"
+                + "~ \tSystem.out.println(\"Hello World!\")\n"
                 + "~ }\n"
                 + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         input.nextLine();
