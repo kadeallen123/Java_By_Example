@@ -48,6 +48,9 @@ public class Askers {
                 case "a":
                     Simple.helloWorld();
                     break;
+                case "b":
+                    Simple.twoIntCompare();
+                    break;
                 default:
                     simpleAsker();
             }

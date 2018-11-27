@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 
 public class Simple {
     
-    private static String endStatement;
     static Scanner input = new Scanner(System.in);
     
     public static void helloWorld() throws IOException {
@@ -20,15 +19,42 @@ public class Simple {
                 + "Code for program:\n"
                 + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                 + "~ public static void main(String[] args) {\n"
-                + "~~~ System.out.println(\"Hello World!\")\n"
+                + "~~~~ System.out.println(\"Hello World!\")\n"
                 + "~ }\n"
                 + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        endStatement = input.nextLine();
+        input.nextLine();
         Askers.simpleAsker();
-//        switch (endStatement) {
-//            default:
-//                Main.cls();
-//                Askers.simpleAsker();
-//        }
+    }
+    
+    public static void twoIntCompare() throws IOException {
+        Main.cls();
+        System.out.println("Compare Two Integers Program!\n"
+                + "\nInput:\n"
+                + "Enter value one:\t");
+        final int a = input.nextInt();
+        System.out.println("\n"
+                + "Enter value two:\t");
+        final int b = input.nextInt();
+        System.out.println("\nOutput:");
+        if(a > b) { System.out.printf("%d is greater than %d\n", a, b);} 
+        else { System.out.printf("%d is greater than %d\n", b, a);}
+        System.out.println("\nCode for program:\n"
+                + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+                + "~ static Scanner input = new Scanner(System.in);\n"
+                + "~\n"
+                + "~ public static void main(String[] args) {\n"
+                + "~ \tSystem.out.println(\"Enter value one:    \")\n"
+                + "~ \tfinal int a = input.nextInt();\n"
+                + "~ \tSystem.out.println(\"Enter value two:    \")\n"
+                + "~ \tfinal int b = input.nextInt();\n"
+                + "~ \tif(a > b) { System.out.printf(\"%d is greater than %d\", a, b);\n"
+                + "~ \telse { System.out.printf(\"%d is greater than %d\", b, a);\n"
+                + "~ }\n"
+                + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        input.nextLine();
+        switch (input.nextLine()) {
+            default:
+                Askers.simpleAsker();
+        }
     }
 }
