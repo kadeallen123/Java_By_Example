@@ -8,6 +8,8 @@ package java_by_example;
 
 import java.util.*;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
     
@@ -22,8 +24,17 @@ public class Main {
     public static void clearConsole() throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
     }
+    public static void cls() throws IOException{
+        try {
+                Main.clearConsole();
+            } 
+        catch (InterruptedException ex) {
+                Logger.getLogger(Simple.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
     public static void simpleAsker() throws IOException {
-        System.out.println("\nThis is Simple Programs.\n"
+        cls();
+        System.out.println("This is Simple Programs.\n"
                     + "\t'a' to view the 'Hello World' Program\n"
                     + "\t'b' to view the 'Two Integer Comparison' Program\n"
                     + "\t'c' to view the 'Three Integer Comparison' Program\n"
@@ -48,6 +59,7 @@ public class Main {
     }
     
     public static void categoryAsker() throws IOException{
+        cls();
         System.out.println("Enter the correpsonding number/letter to view the corresponding category/program\n"
                 + "Enter 'back' at any time to go back to the previous selection,\n"
                 + "Enter 'exit' at any time to exit the program.\n"
@@ -59,13 +71,18 @@ public class Main {
                 + "\t'6' to view Mathematics\n"
                 + "\t'7' to view Linked Lists.");
         mode = input.nextByte();
-        if (mode == 1) {
-            simpleAsker();
+        switch (mode) {
+            case 1:
+                simpleAsker();
+                break;
+            default:
+                categoryAsker();
         }
     }
     
     public static void main(String[] args) throws IOException {
        // Welcome statement
+        cls();
         System.out.println("Welcome to Java By Examples\nPress 'Enter' to continue.");
         input.nextLine();
         categoryAsker();
