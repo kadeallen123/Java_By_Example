@@ -53,6 +53,8 @@ public class Askers {
                     break;
                 case "c":
                     Simple.threeIntCompare();
+		case "d":
+		    Simple.evenOrOdd();
                 default:
                     simpleAsker();
             }
