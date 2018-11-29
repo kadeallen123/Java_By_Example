@@ -12,8 +12,8 @@ public class Askers {
     public static void categoryAsker() throws IOException{
         cls();
         System.out.println("Enter the correpsonding number/letter to view the corresponding category/program\n"
-                + "Enter 'back' at any time to go back to the previous selection,\n"
-                + "Enter 'exit' at any time to exit the program.\n"
+                + "Press 'Enter' at any time to go back to the previous selection,\n"
+                + "Enter 'again' after a program has run to run it again.\n"
                 + "\t'1' to view Simple Programs\n"
                 + "\t'2' to view Loops / Iterations\n"
                 + "\t'3' to view Patterns\n"
@@ -51,6 +51,8 @@ public class Askers {
                 case "b":
                     Simple.twoIntCompare();
                     break;
+                case "c":
+                    Simple.threeIntCompare();
                 default:
                     simpleAsker();
             }
