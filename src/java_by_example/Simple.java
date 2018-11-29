@@ -158,12 +158,6 @@ public class Simple {
 		+ "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 		+ "\n"
 		+ "Enter 'again' to run the program, or enter anything else to go back.\n");
-	
-	
-	
-	
-	
-	
 	endStatement = input.nextLine();
 	switch (input.nextLine()) {
 	    case "again":
