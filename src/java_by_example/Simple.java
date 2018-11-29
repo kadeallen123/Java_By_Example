@@ -88,29 +88,29 @@ public class Simple {
         else if (b > a && b > c) { System.out.printf("%d is the largest number out of %d, %d and %d", b, a, b, c); }
         else if (c > a && c > b) { System.out.printf("%d is the largest number out of %d, %d and %d", c, a, b, c); }
         else {System.out.println("Values are identical!");}
-        System.out.println("\nCode for program:\n"
+        System.out.println("\n\nCode for program:\n"
                 + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                 + "~ static Scanner input = new Scanner(System.in);                                                 ~\n"
                 + "~                                                                                                ~\n"
                 + "~ public static void main(String[] args) {                                                       ~\n"
-                + "~ \tSystem.out.println(\"Enter value one:    \");                                      ~\n"
-                + "~ \tfinal int a = input.nextInt();              ~\n"
-                + "~                                                   ~\n"
-                + "~ \tSystem.out.println(\"Enter value two:    \"); ~\n"
-                + "~ \tfinal int b = input.nextInt();              ~\n"
-                + "~                                                   ~\n"
-                + "~ \tSystem.out.println(\"Enter value three:  \"); ~\n"
-                + "~ \tfinal int c = input.nextInt();               ~\n"
-                + "~                                                                                                    ~\n"
-                + "~ \tif(a > b && a > c){                           ~\n"
-                + "~ \t\tSystem.out.printf(\"%d is the largest number out of %d, %d and %d\", a, a, b, c); ~\n"
-                + "~ \t} else if (b > a && b > c) {                      ~\n"
-                + "~ \t\tSystem.out.printf(\"%d is the largest number out of %d, %d and %d\", b, a, b, c); ~\n"
-                + "~ \t} else if (c > a && c > b){            ~\n"
-                + "~ \t\tSystem.out.printf(\"%d is the largest number out of %d, %d and %d\", c, a, b, c); ~\n"
-                + "~ \t} else { System.out.println(\"Values are identical!\");                                       ~\n"
-                + "~ }                                                                                               ~\n"
-                + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                + "~ \tSystem.out.println(\"Enter value one:    \");                                              ~\n"
+                + "~ \tfinal int a = input.nextInt();                                                           ~\n"
+                + "~                                                                                                ~\n"
+                + "~ \tSystem.out.println(\"Enter value two:    \");                                              ~\n"
+                + "~ \tfinal int b = input.nextInt();                                                           ~\n"
+                + "~                                                                                                ~\n"
+                + "~ \tSystem.out.println(\"Enter value three:  \");                                              ~\n"
+                + "~ \tfinal int c = input.nextInt();                                                           ~\n"
+                + "~                                                                                                ~\n"
+                + "~ \tif(a > b && a > c){                                                                      ~\n"
+                + "~ \t\tSystem.out.printf(\"%d is the largest number out of %d, %d and %d\", a, a, b, c);  ~\n"
+                + "~ \t} else if (b > a && b > c){                                                              ~\n"
+                + "~ \t\tSystem.out.printf(\"%d is the largest number out of %d, %d and %d\", b, a, b, c);  ~\n"
+                + "~ \t} else if (c > a && c > b){                                                              ~\n"
+                + "~ \t\tSystem.out.printf(\"%d is the largest number out of %d, %d and %d\", c, a, b, c);  ~\n"
+                + "~ \t} else { System.out.println(\"Values are identical!\");                                    ~\n"
+                + "~ }                                                                                              ~\n"
+                + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         endStatement = input.nextLine();
         switch(input.nextLine()) {
             case "again":
