@@ -26,6 +26,8 @@ public class Askers {
             case 1:
                 simpleAsker();
                 break;
+	    case 2:
+		loopsAsker();
             default:
                 categoryAsker();
         }
@@ -58,5 +60,35 @@ public class Askers {
                 default:
                     simpleAsker();
             }
+    }
+    
+    public static void loopsAsker() throws IOException {
+	cls();
+	System.out.println("This is Loops / Iterations.\n"
+		+ "\t'a' to view the 'Counting' Program\n"
+		+ "\t'b' to view the 'Table' Program\n"
+		+ "\t'c' to view the 'Even Printing' Program\n"
+		+ "\t'd' to view the 'Odd Printing' Program\n");
+	program = input.next();
+	switch (program) {
+	    case "back":
+		categoryAsker();
+		break;
+	    case "a":
+		Loops.counting();
+		break;
+	    case "b":
+		Loops.table();
+		break;
+	    case "c":
+		Loops.evenPrinting();
+		break;
+	    case "d":
+		Loops.oddPrinting();
+		break;
+	    default:
+		loopsAsker();
+		break;
+	}
     }
 }
