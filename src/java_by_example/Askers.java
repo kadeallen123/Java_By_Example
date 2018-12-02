@@ -9,7 +9,7 @@ import static java_by_example.Main.program;
 public class Askers {
     public static Scanner input = new Scanner(System.in);
     
-    public static void categoryAsker() throws IOException{
+    public static void categoryAsker() throws IOException, InterruptedException{
         cls();
         System.out.println("Enter the correpsonding number/letter to view the corresponding category/program\n"
                 + "Press 'Enter' at any time to go back to the previous selection,\n"
@@ -19,8 +19,7 @@ public class Askers {
                 + "\t'3' to view Patterns\n"
                 + "\t'4' to view Arrays\n"
                 + "\t'5' to view Strings\n"
-                + "\t'6' to view Mathematics\n"
-                + "\t'7' to view Linked Lists.");
+                + "\t'6' to view Mathematics\n");
         Main.mode = input.nextInt();
         switch (Main.mode) {
             case 1:
@@ -28,20 +27,21 @@ public class Askers {
                 break;
 	    case 2:
 		loopsAsker();
+            case 3:
+                patternsAsker();
             default:
                 categoryAsker();
         }
     }
     
-    public static void simpleAsker() throws IOException {
+    public static void simpleAsker() throws IOException, InterruptedException {
         cls();
         System.out.println("This is Simple Programs.\n"
                     + "\t'a' to view the 'Hello World' Program\n"
                     + "\t'b' to view the 'Two Integer Comparison' Program\n"
                     + "\t'c' to view the 'Three Integer Comparison' Program\n"
                     + "\t'd' to view the 'Even or Odd' Program\n"
-                    + "\t'e' to view the 'Positive or Negative' Program\n"
-                    + "\t'f' to view the 'Leap Year' Program");
+                    + "\t'e' to view the 'Leap Year' Program");
             program = input.next();
             switch (program) {
                 case "back":
@@ -55,14 +55,17 @@ public class Askers {
                     break;
                 case "c":
                     Simple.threeIntCompare();
+                    break;
 		case "d":
 		    Simple.evenOrOdd();
+                    break;
                 default:
                     simpleAsker();
+                    break;
             }
     }
     
-    public static void loopsAsker() throws IOException {
+    public static void loopsAsker() throws IOException, InterruptedException {
 	cls();
 	System.out.println("This is Loops / Iterations.\n"
 		+ "\t'a' to view the 'Counting' Program\n"
@@ -90,5 +93,32 @@ public class Askers {
 		loopsAsker();
 		break;
 	}
+    }
+    
+    public static void patternsAsker() throws IOException, InterruptedException {
+        cls();
+        System.out.println("This is Patterns.\n"
+                + "\t'a' to view the 'Equilateral Triangle Printing' Program\n"
+                + "\t'b' to view the 'Upside Down Triangle Printing' Program\n"
+                + "\t'c' to view the 'Floyd's Triangle' Program\n"
+                + "\t'd' to view the 'Pascal's Triangle' Program\n");
+        program = input.nextLine();
+        switch(program) {
+            case "a":
+                Patterns.equilateralTriangle();
+                break;
+            case "b":
+                Patterns.upsideDownTriangle();
+                break;
+            case "c":
+                Patterns.floydsTriangle();
+                break;
+            case "d":
+                Patterns.pascalsTriangle();
+                break;
+            default:
+                patternsAsker();
+                break;
+        }
     }
 }

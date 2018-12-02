@@ -6,6 +6,7 @@ import java.lang.Runtime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class Simple {
 
     static Scanner input = new Scanner(System.in);
