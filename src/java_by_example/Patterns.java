@@ -2,7 +2,7 @@ package java_by_example;
 
 import java.io.IOException;
 import java.util.*;
- 
+
 public class Patterns {
 
     static String endStatement;
@@ -11,13 +11,13 @@ public class Patterns {
     public static void equilateralTriangle() throws IOException, InterruptedException {
         Main.cls();
         System.out.println("Equalateral Triangle Printing Program!\n"
-            + "\nInput:\n"
-            + "Enter number of rows:\t");
+                + "\nInput:\n"
+                + "Enter number of rows:\t");
         int base = input.nextInt();
         System.out.println("\nOutput:\n");
-        int j,i;
+        int j, i;
         for (i = 1; i <= base; i++) {
-            for (j = 1; j <= base-i; j++) {
+            for (j = 1; j <= base - i; j++) {
                 System.out.print(" ");
             }
             for (j = 1; j <= i; j++) {
@@ -48,15 +48,15 @@ public class Patterns {
                 + "\n"
                 + "Enter 'again' to go run the program, or anything else to go back.");
         endStatement = input.nextLine();
-	switch (input.nextLine()) {
-	    case "again":
-		equilateralTriangle();
-		break;
-	    default:
-		Askers.patternsAsker();
-		break;
-	}
-        
+        switch (input.nextLine()) {
+            case "again":
+                equilateralTriangle();
+                break;
+            default:
+                Askers.patternsAsker();
+                break;
+        }
+
     }
 
     public static void upsideDownTriangle() throws IOException {
@@ -68,28 +68,37 @@ public class Patterns {
         Main.cls();
         System.out.println("Floyd's Triangle Printing Program!\n"
                 + "\nInput:\n"
-                + "Enter number of rows to be printed:\t");
+                + "Enter number of rows to be printed (Max recommended, 13):\t");
         double rows = input.nextDouble();
-        int i, j,k = 0;
-        /*
-            Add if statement if value is out of possible working range
-        */
+        int i, j, k = 0;
+        if (rows > 13) {
+            Main.cls();
+            System.out.println("That value is above the maximum recommended value of 13\n"
+                    + "Are you sure you would like to continue? (y\\n)");
+            String cond = input.next();
+            if (cond.equals("n")) {
+                System.out.println("Restarting progra");
+            }
+            Thread.sleep(1000);
+            Main.cls();
+            floydsTriangle();
+        }
         for (i = 1; i <= rows; i++) {
             for (j = 1; j <= i; j++) {
                 System.out.printf("%3d", k++);
             }
             System.out.print("\n");
         }
-        
+
         endStatement = input.nextLine();
-	switch (input.nextLine()) {
-	    case "again":
-		pascalsTriangle();
-		break;
-	    default:
-		Askers.patternsAsker();
-		break;
-	}
+        switch (input.nextLine()) {
+            case "again":
+                pascalsTriangle();
+                break;
+            default:
+                Askers.patternsAsker();
+                break;
+        }
     }
 
     public static void pascalsTriangle() throws IOException, InterruptedException {
@@ -100,7 +109,7 @@ public class Patterns {
         double rows = input.nextDouble();
         if (rows >= 15.0) {
             Main.cls();
-            for(int i = 3; i >= 0; i--) {
+            for (int i = 3; i >= 0; i--) {
                 System.out.printf("That value is above the maximum of 14.\n"
                         + "Please try again in %d seconds\n", i);
                 Thread.sleep(1000);
@@ -109,12 +118,12 @@ public class Patterns {
             pascalsTriangle();
         }
         System.out.println("\nOutput:");
-        int i,j;
-        for (i=0; i<= rows; i++) {
-            for(j=0; j<= rows-i; j++) {
+        int i, j;
+        for (i = 0; i <= rows; i++) {
+            for (j = 0; j <= rows - i; j++) {
                 System.out.print("  ");
             }
-            for(j=0; j<=i; j++) {
+            for (j = 0; j <= i; j++) {
                 System.out.printf(" %3d", ExtraMethods.ncr(i, j));
             }
             System.out.print("\n");
@@ -149,15 +158,15 @@ public class Patterns {
                 + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                 + "\n"
                 + "Enter 'again' to run the program, or anything else to go back.");
-        
+
         endStatement = input.nextLine();
-	switch (input.nextLine()) {
-	    case "again":
-		pascalsTriangle();
-		break;
-	    default:
-		Askers.patternsAsker();
-		break;
-	}
+        switch (input.nextLine()) {
+            case "again":
+                pascalsTriangle();
+                break;
+            default:
+                Askers.patternsAsker();
+                break;
+        }
     }
 }
