@@ -29,7 +29,7 @@ public class Main {
         catch (InterruptedException ex) { Logger.getLogger(Simple.class.getName()).log(Level.SEVERE, null, ex); }
     }
         
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
        // Welcome statement
         cls();
         System.out.println("Welcome to Java By Examples\nPress 'Enter' to continue.");
